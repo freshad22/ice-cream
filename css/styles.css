@@ -42,22 +42,6 @@ a {
     border-radius: 10px;
  }
 
- a:hover, a:focus {
-    background-color: #0A8817;
- }
-
- a:focus {
-    color: #ffffff;
- }
-
- input {
-    min-width: 368px;
-    min-height: 42px;
-    padding: 11px 152px 11px 16px;
-    background-color: rgba(248, 210, 78, 0.1);
-    border: 1px solid #84A178;
-    border-radius: 10px;
- }
 
  input::placeholder, textarea::placeholder {
     font-weight: 400;
@@ -114,16 +98,6 @@ textarea {
     border-radius: 10px;
  }
 
- .after {
-    display: flex;
-    font-family: 'Seymour One', sans-serif;    
-    font-weight: 400;
-    font-size: 20px;
-    line-height: calc(28 / 20);
-    justify-content: center;
- }
-
- 
  .modal.active,
  .overlay.active{
     opacity: 1;
@@ -136,6 +110,51 @@ textarea {
     right: 12px;
     fill: #131313;
     cursor: pointer;
+ }
+
+ .after {
+    display: flex;
+    font-family: 'Seymour One', sans-serif;    
+    font-weight: 400;
+    font-size: 20px;
+    line-height: calc(28 / 20);
+    justify-content: center;
+ }
+
+ .link {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 145px;
+    height: 42px;
+    padding: 12px 34px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: calc(17 / 14);
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: #131313;
+    background-color: #F8D24E;
+    border-radius: 10px;
+ }
+
+ .link:hover, .link:focus {
+    background-color: #0A8817;
+ }
+
+ .link:focus {
+    color: #ffffff;
+ }
+
+ 
+ .input {
+    min-width: 368px;
+    min-height: 42px;
+    padding: 11px 152px 11px 16px;
+    background-color: rgba(248, 210, 78, 0.1);
+    border: 1px solid #84A178;
+    border-radius: 10px;
  }
 
  .form-input:not(:placeholder-shown):required:valid {
@@ -168,19 +187,28 @@ textarea {
     color: #ffffff;
  }
  
-
 /* ===============
         MODAL 1 
     ============== */
 
  .buy__modal {
     position: absolute;
-    max-width: 568px;
-    max-height: 644px;
+    min-width: 568px;
+    min-height: 644px;
     padding: 32px 54px;
  }
 
+
+ .box__list {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+ }
+
  .box__one {
+    position: absolute;
     width: 132px;
     height: 135px;
     border: 2px solid #96AF8C;
@@ -188,15 +216,79 @@ textarea {
     border-radius: 15px;
  }
 
- .box__text {
+ .box__one__label {
+    position: relative;
+    margin: 0;
+    top: -2px;
+    left: -2px;
+ }
+
+ .label__input {
+    appearance: none;
+    position: absolute;
+ }
+
+ .box__three__label {
+    position: relative;
+    margin: 0;
+    top: -2px;
+    left: -2px;
+ }
+
+ .box__five__label {
+    position: absolute;
+    margin: 0;
+    top: -2px;
+    left: -2px;
+ }
+
+ .label__span {
+    display: flex;
+    justify-content: center;
+    width: 132px;
+    height: 135px;
+    padding-top: 95px;
     font-weight: 700;
     font-size: 16px;
     line-height: calc(20 / 16);
-    text-align: center;
     letter-spacing: 0.04em;
+    border: 2px solid #96AF8C;
+    box-shadow: 0px 5.26027px 19.726px rgba(212, 20, 67, 0.1);
+    border-radius: 15px;
+ }
+ 
+ .label__span--three {
+    border: 2px solid #EFD478;
  }
 
- .box__two { 
+ .label__span--five {
+    border: 2px solid #D6936D;
+ }
+
+ .label__input:checked + .label__span {
+    background-color: #96AF8C;
+ }
+
+ .label__input:checked + .label__span--three {
+    background-color: #EFD478;
+ }
+
+ .label__input:checked + .label__span--five {
+    background-color: #D6936D;
+ } 
+
+ .box__two {
+    position: relative;
+    top: -56px;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(156, 190, 143, 0.7), rgba(156, 190, 143, 0.7)), #D9D9D9;
+    box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+ }
+
+ .box__three { 
+    position: absolute;
     width: 132px;
     height: 135px;
     border: 2px solid #EFD478;
@@ -204,7 +296,18 @@ textarea {
     border-radius: 15px;
  }
 
- .box__three {
+ .box__four {
+    position: relative;
+    top: -56px;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(248, 210, 78, 0.7), rgba(248, 210, 78, 0.7)), #D9D9D9;
+    box-shadow: 0px 5.26027px 19.726px rgba(153, 114, 23, 0.25);
+ }
+
+ .box__five {
+    position: absolute;
     width: 132px;
     height: 135px;
     border: 2px solid #D6936D;
@@ -212,16 +315,36 @@ textarea {
     border-radius: 15px;
  }
 
+ .box__six {
+    position: relative;
+    top: -56px;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(213, 117, 63, 0.7), rgba(213, 117, 63, 0.7)), #D9D9D9;
+    box-shadow: 0px 5.26027px 19.726px rgba(0, 0, 0, 0.25);
+ }
+
+ .box__img {
+    position: relative;
+    bottom: 7px;
+ }
+
  .buy__form {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     min-width: 368px;
-    min-height: 200px;
+    min-height: 274px;
 }
 
 .buy__input {
     margin-bottom: 16px;
+}
+
+.buy__textarea {
+    width: 368px;
+    height: 84px;
 }
 
 .buy__btn {
@@ -439,4 +562,56 @@ textarea {
         margin-right: auto;
     }
 
+     /* 777777777 */
+ 
+ 
+     .help__modal {
+        min-width: 568px;
+        min-height: 644px;
+        padding: 32px 54px;
+     }
 
+     .check__input {
+        appearance: none;
+        position: absolute;
+     }
+
+     .check {
+        position: relative;
+        margin: 0;
+        top: -2px;
+        left: -2px;
+     }
+
+     .check__ {
+        position: absolute;
+        margin: 0;
+        top: 163px;
+        left: 218px;
+     }
+
+     .check-- {
+        position: absolute;
+        margin: 0;
+        top: 163px;
+        left: 382px;
+     }
+
+     .span {
+        display: flex;
+        justify-content: center;
+        width: 132px;
+        height: 135px;
+        padding-top: 95px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: calc(20 / 16);
+        letter-spacing: 0.04em;
+        border: 2px solid #EFD478;
+        box-shadow: 0px 5.26027px 19.726px rgba(212, 20, 67, 0.1);
+        border-radius: 15px;
+     }
+
+     .check__input:checked + .span {
+        background-color: #EFD478;;
+     }
