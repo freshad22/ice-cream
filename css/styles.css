@@ -108,8 +108,13 @@ textarea {
     position: absolute;
     top: 12px;
     right: 12px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
     fill: #131313;
     cursor: pointer;
+    background-color: #ffffff;
+    border: none;
  }
 
  .after {
